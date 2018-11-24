@@ -14,6 +14,14 @@ Buanglah waktu anda yang bermutu itu untuk mendengarkan podcast kami dengan kual
 
 ### Kontak
 
+Ingin berdiskusi di podcast kami?
+
+Ingin menganggu kebebasan berekspresi kami?
+
+Ingin mengajak kami mengadakan meetup?
+
+Kuy lah!
+
 * Email: robi[at]randomops[dot]com
 
 * Twitter : [@randomops](https://twitter.com/randomops)
