@@ -6,7 +6,9 @@ layout: default
 
 <img class="profile-picture" src="{{site.baseurl}}/{{site.profile-picture}}">
 
-Sekumpulan orang yang kebetulan berkantor di tempat yang sama. Daripada banyak obrolan terlewat begitu saja, maka lebih baik direkam saja.
+Sebuah podcast dalam bahasa Indonesia yang membahas hal random tentang Software Engineering. Seringnya soal culture, DevOps dan hal yang berkaitan lainnya.
+
+Di isi oleh sekumpulan orang yang kebetulan berkantor di tempat yang sama. Daripada banyak obrolan terlewat begitu saja, maka lebih baik direkam saja.
 
 Ingin berubah menjadi sebuah komunitas yang tidak serius - anti tesis dari komunitas DevOps yang sudah ada.
 
