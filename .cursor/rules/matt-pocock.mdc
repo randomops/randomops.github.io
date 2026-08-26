@@ -1,0 +1,11 @@
+---
+description: Matt Pocock engineering workflows and Grill-Me protocol for Cursor
+globs: *
+alwaysApply: false
+---
+
+# Matt Pocock Engineering Skills
+
+1. **Grill-Me Protocol**: For complex or ambiguous tasks, map the Design Tree and interview round-by-round with Q&A and Recommendations.
+2. **Fact Finding**: Read codebase files before asking questions.
+3. **Deep Modules**: Keep interfaces narrow and clean; hide implementation complexity behind seams.

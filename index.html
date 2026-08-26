@@ -2,20 +2,341 @@
 layout: default
 ---
 
-{% for post in site.posts %}
+<div class="container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <!-- Left Hero Column -->
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>PODCAST ARCHIVE &bull; 23 EPISODES</span>
+        </div>
+        <h1 class="hero-title">
+          Obrolan Santai Seputar <span class="gradient-text">Infra, Kodingan & Rehat Ngopi</span>
+        </h1>
+        <p class="hero-description">
+          Sebuah podcast santai dalam bahasa Indonesia oleh <strong>Robee</strong> dan kawan-kawan sekantor. Membahas suka duka software engineering, misteri kenapa production jalan tapi di lokal error, dan obrolan ngalor-ngidul saat rehat ngopi.
+        </p>
 
-  <a href="{{site.baseurl}}{{ post.url }}" class="title">
-    {{ post.title }}
-  </a>
-  <div class = "date">
-    {{ post.date | date: "%d - %m - %Y" }}
+        <!-- Platform Listen Buttons -->
+        <div class="platform-buttons-row">
+          <a href="{{ site.anchor_url }}" target="_blank" rel="noopener noreferrer" class="btn-platform btn-primary-platform" aria-label="Dengarkan di Spotify">
+            <!-- Spotify Icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.215.353-.676.467-1.028.252-2.824-1.725-6.38-2.115-10.567-1.16-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.587-1.047 8.52-.603 11.678 1.341.352.215.466.676.252 1.028zm1.47-3.268c-.27.441-.85.58-1.291.31-3.232-1.986-8.158-2.56-11.982-1.398-.496.15-1.024-.135-1.174-.631-.15-.496.135-1.024.631-1.174 4.375-1.328 9.813-.687 13.506 1.582.441.27.58.85.31 1.291zm.126-3.41c-3.874-2.3-10.266-2.512-13.98-1.385-.595.18-1.226-.156-1.406-.75-.18-.595.156-1.226.75-1.406 4.267-1.295 11.323-1.046 15.792 1.606.536.318.71 1.012.392 1.548-.318.536-1.012.71-1.548.392z"/>
+            </svg>
+            <span>Dengarkan di Spotify</span>
+          </a>
+
+          <a href="{{ site.apple_podcasts_url }}" target="_blank" rel="noopener noreferrer" class="btn-platform" aria-label="Apple Podcasts">
+            <!-- Apple Podcasts Icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.001 0C5.373 0 0 5.373 0 12s5.373 12 12.001 12c6.626 0 11.999-5.373 11.999-12S18.627 0 12.001 0zm.017 3.6c4.639 0 8.4 3.761 8.4 8.4 0 2.128-.792 4.07-2.1 5.55l-1.35-1.35a6.45 6.45 0 0 0 1.55-4.2c0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5c0 1.636.606 3.13 1.61 4.27l-1.35 1.35a8.358 8.358 0 0 1-2.16-5.62c0-4.639 3.761-8.4 8.4-8.4zm-.017 3.3a5.1 5.1 0 0 1 5.1 5.1c0 1.258-.453 2.41-1.21 3.3l-1.35-1.35a3.17 3.17 0 0 0 .66-1.95c0-1.767-1.433-3.2-3.2-3.2s-3.2 1.433-3.2 3.2c0 .736.248 1.414.67 1.96l-1.35 1.35a5.076 5.076 0 0 1-1.22-3.31 5.1 5.1 0 0 1 5.1-5.1zm0 3.3a1.8 1.8 0 0 1 1.8 1.8c0 .54-.238 1.025-.62 1.36l1.37 7.04h-5.1l1.37-7.04c-.382-.335-.62-.82-.62-1.36a1.8 1.8 0 0 1 1.8-1.8z"/>
+            </svg>
+            <span>Apple Podcasts</span>
+          </a>
+
+          <a href="{{ site.baseurl }}/feed.xml" target="_blank" rel="noopener noreferrer" class="btn-platform" aria-label="RSS Feed">
+            <!-- RSS Icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+            <span>RSS Feed</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Latest Episode Spotlight -->
+      {% assign latest_post = site.posts.first %}
+      <div>
+        <div class="hero-spotlight-card">
+          <div class="spotlight-header">
+            <img class="spotlight-cover" src="{{ site.baseurl }}/{{ site.profile-picture }}" alt="randomOps Cover Art" width="72" height="72">
+            <div class="spotlight-meta">
+              <span class="spotlight-tag">⭐ Episode Terbaru</span>
+              <span class="spotlight-date">{{ latest_post.date | date: "%d %b %Y" }}</span>
+            </div>
+          </div>
+          <h2 class="spotlight-title">
+            <a href="{{ site.baseurl }}{{ latest_post.url }}">{{ latest_post.title }}</a>
+          </h2>
+          {% if latest_post.snippet %}
+          <div class="spotlight-snippet">
+            "{{ latest_post.snippet }}"
+          </div>
+          {% endif %}
+
+          <!-- Audio Embed Player for Featured Episode -->
+          <div class="audio-player-container">
+            {% if latest_post.content contains "<iframe" %}
+              {{ latest_post.content | split: "<iframe" | last | split: "</iframe>" | first | prepend: '<iframe class="podcast-iframe" title="Featured Episode Audio Player"' | append: '</iframe>' }}
+            {% endif %}
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <a href="{{ site.baseurl }}{{ latest_post.url }}" class="btn-platform btn-primary-platform" style="width: 100%; justify-content: center;">
+              <span>Buka Catatan Episode &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Stats Strip -->
+  <section class="stats-strip" aria-label="Podcast Statistics">
+    <div class="stat-item">
+      <span class="stat-number">23</span>
+      <span class="stat-label">Total Episode</span>
+      <span class="stat-subtext">Arsip lengkap 2018 - 2020</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Apa Adanya</span>
+      <span class="stat-subtext">Obrolan jujur tanpa jaim</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Cloud & Infra</span>
+      <span class="stat-label">Topik Utama</span>
+      <span class="stat-subtext">DevOps, SRE & Kehidupan Kantor</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Rehat Ngopi</span>
+      <span class="stat-label">Format Santai</span>
+      <span class="stat-subtext">Daripada obrolan terlewat</span>
+    </div>
+  </section>
+
+  <!-- Search & Filter Controls -->
+  <section class="section-head-bar">
+    <div class="section-head-top">
+      <h2 class="section-title">
+        <span>Koleksi Episode</span>
+        <span class="title-count-pill" id="episode-count-badge">{{ site.posts.size }} Episode</span>
+      </h2>
+
+      <!-- Quick Topic Filters -->
+      <div class="filter-pills-row" id="filter-pills" role="tablist">
+        <button class="filter-pill active" data-filter="all" type="button">Semua</button>
+        <button class="filter-pill" data-filter="cloud" type="button">Cloud & Infra</button>
+        <button class="filter-pill" data-filter="sre" type="button">SRE & Incident</button>
+        <button class="filter-pill" data-filter="architecture" type="button">Arsitektur</button>
+        <button class="filter-pill" data-filter="culture" type="button">Culture & Hiring</button>
+        <button class="filter-pill" data-filter="qa" type="button">QA & Test</button>
+      </div>
+    </div>
+
+    <!-- Live Search Input -->
+    <div class="search-filter-box">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="episode-search" placeholder="Cari episode berdasarkan judul, nomor, topik, atau kata kunci..." aria-label="Cari episode">
+      </div>
+    </div>
+  </section>
+
+  <!-- Episodes Grid -->
+  <section class="episodes-grid" id="episodes-container">
+    {% for post in site.posts %}
+    {% assign title_lower = post.title | downcase %}
+    {% assign snippet_lower = post.snippet | downcase %}
+    
+    {% assign category = "general" %}
+    {% if title_lower contains "cloud" or title_lower contains "aws" or title_lower contains "ops" or title_lower contains "infra" %}
+      {% assign category = "cloud" %}
+    {% elsif title_lower contains "test" or title_lower contains "qa" or snippet_lower contains "test" %}
+      {% assign category = "qa" %}
+    {% elsif title_lower contains "arsitektur" or title_lower contains "vidio" or title_lower contains "microservices" or title_lower contains "database" %}
+      {% assign category = "architecture" %}
+    {% elsif title_lower contains "hiring" or title_lower contains "pair" or title_lower contains "kultur" or title_lower contains "culture" or title_lower contains "burnout" or title_lower contains "remote" %}
+      {% assign category = "culture" %}
+    {% elsif title_lower contains "monitoring" or title_lower contains "observability" or title_lower contains "sre" or title_lower contains "incident" or title_lower contains "on-call" %}
+      {% assign category = "sre" %}
+    {% endif %}
+
+    <article class="episode-card" data-category="{{ category }}" data-title="{{ post.title | downcase | escape }}" data-snippet="{{ post.snippet | downcase | escape }}">
+      <div class="card-meta-row">
+        <div class="meta-left">
+          <!-- Extract Episode number from title if present -->
+          <span class="episode-num-badge">
+            {% if post.title contains "Episode #" %}
+              {{ post.title | split: ":" | first | strip }}
+            {% else %}
+              EPISODE
+            {% endif %}
+          </span>
+          <span class="episode-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          </span>
+        </div>
+      </div>
+
+      <h2 class="episode-card-title">
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h2>
+
+      {% if post.snippet %}
+      <div class="episode-card-snippet">
+        "{{ post.snippet }}"
+      </div>
+      {% endif %}
+
+      <!-- Audio Embed on Demand (Prevents auto-scroll focus grabbing on page load) -->
+      {% assign embed_url = "" %}
+      {% if post.content contains 'src="' %}
+        {% assign embed_url = post.content | split: 'src="' | last | split: '"' | first %}
+      {% endif %}
+      
+      {% if embed_url != "" %}
+      <div class="card-audio-preview" id="audio-preview-{{ forloop.index }}" data-embed-src="{{ embed_url }}">
+        <button type="button" class="btn-play-trigger" onclick="loadEpisodeEmbed('audio-preview-{{ forloop.index }}')" aria-label="Putar episode {{ post.title | escape }}">
+          <div class="play-icon-circle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="6 4 20 12 6 20 6 4"></polygon>
+            </svg>
+          </div>
+          <div class="play-trigger-text">
+            <span class="play-label">Putar Audio Episode</span>
+            <span class="play-subtext">Klik untuk memuat player langsung di halaman ini</span>
+          </div>
+        </button>
+      </div>
+      {% endif %}
+
+      <!-- Episode Quick Audio Actions & Show Notes Button -->
+      <div class="card-footer-actions">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="btn-read-notes">
+          <span>Catatan Obrolan</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <a href="{{ site.anchor_url }}" target="_blank" rel="noopener noreferrer" class="btn-share btn-share-spotify" title="Dengarkan di Spotify">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.215.353-.676.467-1.028.252-2.824-1.725-6.38-2.115-10.567-1.16-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.587-1.047 8.52-.603 11.678 1.341.352.215.466.676.252 1.028zm1.47-3.268c-.27.441-.85.58-1.291.31-3.232-1.986-8.158-2.56-11.982-1.398-.496.15-1.024-.135-1.174-.631-.15-.496.135-1.024.631-1.174 4.375-1.328 9.813-.687 13.506 1.582.441.27.58.85.31 1.291zm.126-3.41c-3.874-2.3-10.266-2.512-13.98-1.385-.595.18-1.226-.156-1.406-.75-.18-.595.156-1.226.75-1.406 4.267-1.295 11.323-1.046 15.792 1.606.536.318.71 1.012.392 1.548-.318.536-1.012.71-1.548.392z"/>
+            </svg>
+            <span>Spotify</span>
+          </a>
+
+          <button type="button" class="btn-share" onclick="copyToClipboard('{{ site.url }}{{ site.baseurl }}{{ post.url }}')" title="Salin link episode">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Salin</span>
+          </button>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <!-- Empty State (Shown when search/filter produces 0 items) -->
+  <div id="no-results-box" style="display: none; text-align: center; padding: 4rem 1rem; background-color: var(--bg-surface); border: 1px dashed var(--border-color); border-radius: var(--radius-lg); margin-top: 1.5rem;">
+    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
+    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Tidak ada episode yang cocok</h3>
+    <p style="color: var(--text-muted); max-width: 45ch; margin: 0 auto 1.5rem auto;">Coba gunakan kata kunci pencarian yang lain atau pilih kategori Semua.</p>
+    <button type="button" id="reset-filter-btn" class="btn-platform btn-primary-platform">Reset Filter</button>
   </div>
-  <br><br>
-  {% if post.snippet %}
-    {{ post.snippet }}
-  {% endif %}
-  <br><br><br>
-  {% if forloop.last == false %}
-  <hr><br><br>
-  {% endif %}
-{% endfor %}
+</div>
+
+<!-- Instant Search, Category Filter & Audio Embed on Demand Script -->
+<script>
+  // On-demand episode audio embed loader
+  window.loadEpisodeEmbed = function(id) {
+    var container = document.getElementById(id);
+    if (!container) return;
+    var src = container.getAttribute('data-embed-src');
+    if (!src) return;
+    container.innerHTML = '<iframe class="podcast-iframe" src="' + src + '" height="161px" width="100%" frameborder="0" scrolling="no" allow="encrypted-media" style="width: 100%; height: 161px; min-height: 161px; border: none; border-radius: var(--radius-md); display: block;" title="Audio Player"></iframe>';
+  };
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('episode-search');
+    var filterButtons = document.querySelectorAll('#filter-pills .filter-pill');
+    var cards = document.querySelectorAll('.episode-card');
+    var countBadge = document.getElementById('episode-count-badge');
+    var noResults = document.getElementById('no-results-box');
+    var resetBtn = document.getElementById('reset-filter-btn');
+
+    var currentFilter = 'all';
+    var currentQuery = '';
+
+    function filterEpisodes() {
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        var category = card.getAttribute('data-category') || 'general';
+        var title = card.getAttribute('data-title') || '';
+        var snippet = card.getAttribute('data-snippet') || '';
+
+        var matchesCategory = (currentFilter === 'all') || (category === currentFilter);
+        var matchesSearch = true;
+
+        if (currentQuery.trim() !== '') {
+          var q = currentQuery.toLowerCase().trim();
+          matchesSearch = title.includes(q) || snippet.includes(q);
+        }
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countBadge) {
+        countBadge.textContent = visibleCount + ' Episode';
+      }
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        currentQuery = e.target.value;
+        filterEpisodes();
+      });
+    }
+
+    filterButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterButtons.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        filterEpisodes();
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        if (searchInput) searchInput.value = '';
+        currentQuery = '';
+        currentFilter = 'all';
+        filterButtons.forEach(function(b) { b.classList.remove('active'); });
+        var allBtn = document.querySelector('#filter-pills [data-filter="all"]');
+        if (allBtn) allBtn.classList.add('active');
+        filterEpisodes();
+      });
+    }
+  });
+</script>

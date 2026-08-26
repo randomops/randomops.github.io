@@ -1,22 +1,38 @@
 title: randomOps
-subtitle: Podcast, Community and Preman Infra
-
+subtitle: Obrolan Santai Seputar Infra, Kodingan & Rehat Ngopi
+description: "Sebuah podcast santai dalam bahasa Indonesia oleh Robee dan kawan-kawan. Membahas suka duka software engineering, cloud infrastructure, misteri production, dan obrolan ngalor-ngidul saat rehat ngopi."
+author: "Robee & Friends"
+url: "https://randomops.github.io"
 baseurl: ""
 
+
+
+# Podcast Platform Links
+spotify_url: "https://anchor.fm/randomops"
+apple_podcasts_url: "https://podcasts.apple.com/podcast/randomops"
+anchor_url: "https://anchor.fm/randomops"
+rss_url: "/feed.xml"
+github_username: "randomops"
+
+
+profile-picture: "randomops.jpg"
+avatar: "randomops.jpg"
+
 markdown: kramdown
-
-tracking_id: #
-
-footer_url: "http://randomops.com"
-footer_text: "randomOps | 2018"
-
-profile-picture: randomops.jpg
-
+highlighter: rouge
 permalink: /:year-:month-:day-:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
 sass:
-    style: compressed
-    sass_dir: css
+  style: compressed
+  sass_dir: css
 
 navbar:
- - name: "About"
-   link: "about"
+  - name: "Episodes"
+    link: ""
+  - name: "About"
+    link: "about"
+

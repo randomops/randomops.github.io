@@ -1,0 +1,16 @@
+---
+description: Universal agent guidelines and workspace conventions for Cursor
+globs: *
+alwaysApply: true
+---
+
+# Universal Agent Guidelines for Cursor
+
+This workspace is a multi-project repository containing 40 individual subprojects across Go, Python, Next.js/React, TypeScript, Android, Swift, Ruby/Jekyll, and Terraform.
+
+## Core Rules
+1. **Test-Driven Development (TDD)**: Every feature, bug fix, or refactor must follow TDD (Red -> Green -> Refactor) using vertical slices against agreed public seams.
+2. **Taste Skill Anti-Slop Discipline**: All UI/frontend work must output a one-line Design Read, calibrate the Three Dials (`DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`), and avoid generic AI templates.
+3. **Matt Pocock Engineering Workflows**: Use the Grill-Me protocol before building complex features, perform autonomous fact finding before asking questions, and design deep modules.
+4. **Full Output Enforcement**: Never output placeholder comments or truncated snippets. Always provide complete, working code.
+5. **Rigorous Verification**: Run the respective project's test and build commands before declaring completion.
