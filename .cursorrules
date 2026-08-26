@@ -1,0 +1,24 @@
+# Cursor Rules - Universal Development Standards
+
+This workspace contains 40 distinct subprojects. All AI coding sessions in Cursor must adhere to the following principles:
+
+## 1. Test-Driven Development (TDD) - Mandatory
+- Always follow the Red-Green-Refactor loop.
+- Write failing tests first against public seams (interfaces), not private implementation details.
+- Work in vertical slices: one test -> one minimal implementation -> pass -> refactor.
+- Run project-specific test suites (`go test ./...`, `pytest`, `npm test`, `./gradlew test`, `swift test`).
+
+## 2. Taste Skill - Anti-Slop Frontend & UI Design
+- Adhere to https://tasteskill.dev guidelines.
+- Output a one-line Design Read before frontend changes.
+- Calibrate the Three Dials: DESIGN_VARIANCE (1-10), MOTION_INTENSITY (1-10), VISUAL_DENSITY (1-10).
+- Avoid AI cliches: no generic purple/indigo mesh gradients, no 3 floating cards, no default Inter+slate-900, no div-based fake screenshots.
+- Ensure strict WCAG AA contrast, hero viewport fit (min-h-[100dvh]), max pt-24 hero top padding, single-line desktop nav, and max 1 eyebrow per 3 sections.
+
+## 3. Matt Pocock Engineering Discipline
+- Grill-Me First: Before complex or ambiguous tasks, conduct an interactive design-tree interview with recommendations.
+- Autonomous Fact Finding: Explore files and code first; never ask questions answerable from the codebase.
+- Deep Modules: Design clean, narrow interfaces with deep implementations.
+
+## 4. Full Output Enforcement
+- Never write placeholder comments (e.g. `// TODO: implement later`, `/* ... */`). Write complete, working code.

@@ -1,0 +1,12 @@
+---
+description: Taste Skill Anti-Slop UI & Frontend standards for Cursor
+globs: **/*.{tsx,jsx,html,css,scss,vue,swift}
+alwaysApply: true
+---
+
+# Taste Skill Anti-Slop UI Guidelines
+
+1. **Design Read**: Output `Reading this as: <page kind> for <audience>, with a <vibe> language, leaning toward <aesthetic family>.`
+2. **Three Dials**: Calibrate `DESIGN_VARIANCE` (1-10), `MOTION_INTENSITY` (1-10), `VISUAL_DENSITY` (1-10).
+3. **Anti-Defaults**: Banned generic purple gradients, 3 floating cards, Inter+slate-900 default, div fake screenshots, unmotivated animations, and wrapped CTAs.
+4. **Layout**: Hero fits initial viewport (`min-h-[100dvh]`), `pt-24` max top padding, single-line desktop nav (<80px), max 1 eyebrow per 3 sections, WCAG AA contrast.

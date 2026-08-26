@@ -1,9 +1,25 @@
 ---
 layout: default
 permalink: /404.html
+title: "404 - Halaman Tidak Ditemukan"
 ---
 
-<br>
-<center>
-    <h1>404 - Page not found</h1>
-</center>
+<div class="container container-narrow">
+  <div class="error-page-container">
+    <div class="error-code-badge">404</div>
+    <h1 class="error-headline">Halaman Tidak Ditemukan</h1>
+    <p class="error-subtext">
+      Sepertinya route atau episode yang Anda cari telah dipindahkan, di-refactor, atau tersesat di routing table yang salah.
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <a href="{{ site.baseurl }}/" class="btn-platform btn-primary-platform">
+        &larr; Kembali ke Beranda & Semua Episode
+      </a>
+      <a href="{{ site.baseurl }}/about" class="btn-platform">
+        Tentang randomOps
+      </a>
+    </div>
+  </div>
+</div>
+

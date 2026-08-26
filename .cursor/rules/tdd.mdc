@@ -1,0 +1,21 @@
+---
+description: Test-Driven Development (TDD) rules for Cursor
+globs: **/*.{go,py,ts,tsx,js,jsx,kt,swift,rb}
+alwaysApply: true
+---
+
+# Test-Driven Development (TDD) Mandate
+
+1. **Seams First**: Write tests against public module boundaries, never internal private implementation details.
+2. **Red-Green Loop**:
+   - Write failing test first. Verify it fails as expected.
+   - Write minimal implementation to pass.
+   - Refactor after green.
+3. **Vertical Slices**: 1 seam -> 1 test -> 1 minimal code -> repeat.
+4. **Test Runners**:
+   - Go: `go test -v ./...`
+   - Python: `pytest`
+   - TypeScript/React: `npm test`
+   - Android/Kotlin: `./gradlew test`
+   - Swift: `swift test`
+   - Ruby/Jekyll: `bundle exec rspec` / `bundle exec jekyll build`
